@@ -29,10 +29,12 @@ Clone the project, install dependancies and use main.py to run the app.
 API for {username} can be fetched at
 ```plaintext
 api.chess.com/pub/player/{username}/games/archives
+```
 
 This returns a json object with a list of further urls with games divided up by year and month, like so:
 ```plaintext
 https://api.chess.com/pub/player/{username}/games/2022/10
+```
 
 Use injest_monthly_archive_urls.py then fetch_game_data.py, then convert_to_csv.py then eda and cleaning jupyter notebooks to get the final_csv.
 
