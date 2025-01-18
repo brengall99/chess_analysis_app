@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block title %}Game Analysis{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Game Analysis</h1>
+    <p>Dive into my ratings and games for the last 7 years!.</p>
+
+    <div class="single-plot-wrapper">
+        <div class="plot-container">
+            <iframe src="{{ url_for('static', filename='plots/rating_over_time_interactive.html') }}" 
+                    width="100%" 
+                    height="600px" 
+                    frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <div class="single-plot-wrapper">
+        <div class="plot-container">
+            <iframe src="{{ url_for('static', filename='plots/rating_vs_opponent_interactive.html') }}" 
+                    width="100%" 
+                    height="600px" 
+                    frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <div class="single-plot-wrapper">
+        <div class="plot-container">
+            <iframe src="{{ url_for('static', filename='plots/top_15_openings.html') }}" 
+                    width="100%" 
+                    height="600px" 
+                    frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <div class="plot-wrapper">
+        <div class="plot-container">
+            <iframe src="{{ url_for('static', filename='plots/games_won_by_interactive.html') }}" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0"></iframe>
+        </div>
+        <div class="plot-container">
+            <iframe src="{{ url_for('static', filename='plots/games_lost_by_interactive.html') }}" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <div class="plot-wrapper">
+        <div class="plot-container">
+            <iframe src="{{ url_for('static', filename='plots/games_drawn_by_interactive.html') }}" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0"></iframe>
+        </div>
+        <div class="plot-container">
+            <iframe src="{{ url_for('static', filename='plots/game_outcomes_interactive.html') }}" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <div class="plot-wrapper">
+        <div class="plot-container">
+            <iframe src="{{ url_for('static', filename='plots/rating_distribution_interactive.html') }}" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0"></iframe>
+        </div>
+        <div class="plot-container">
+            <iframe src="{{ url_for('static', filename='plots/rating_opponent_distribution_interactive.html') }}" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <div class="plot-wrapper">
+        <div class="plot-container">
+            <iframe src="{{ url_for('static', filename='plots/start_times_by_hour_interactive.html') }}" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0"></iframe>
+        </div>
+        <div class="plot-container">
+            <iframe src="{{ url_for('static', filename='plots/games_by_day_interactive.html') }}" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0"></iframe>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %}Game Lookup{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <h1>Game Lookup</h1>
+        <p>Filter games and explore my chess history!</p>
+
+        <form method="POST" class="filter-form">
+            <div class="form-group">
+                <label for="start_date">Start Date:</label>
+                <div class="tooltip">
+                    <input type="date" id="start_date" name="start_date">
+                    <span class="tooltiptext">Enter the start date range</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="end_date">End Date:</label>
+                <div class="tooltip">
+                    <input type="date" id="end_date" name="end_date">
+                    <span class="tooltiptext">Enter the end date range</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="min_rating">Min Rating:</label>
+                <div class="tooltip">
+                    <input type="number" id="min_rating" name="min_rating" min="0" placeholder="e.g., 923" title="tooltip test!">
+                    <span class="tooltiptext">Enter a lower rating range</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="max_rating">Max Rating:</label>
+                <div class="tooltip">
+                    <input type="number" id="max_rating" name="max_rating" min="0" placeholder="e.g., 1345">
+                    <span class="tooltiptext">Enter an upper rating range</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="result">Result:</label>
+                <div class="tooltip">
+                    <input type="text" id="result" name="result" placeholder="e.g., brengall99 won by checkmate">
+                    <span class="tooltiptext">This takes the form of "username won on time". Options are: "... won on time", "... won by resignation", "...won by checkmate"</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="opening">Opening Name:</label>
+                <div class="tooltip">
+                    <input type="text" id="opening" name="opening" placeholder="e.g., Sicilian">
+                    <span class="tooltiptext">Will return an opening that contains the search term, i.e. Searching "closed" returns: "Sicilian, Closed" etc.</span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn">Filter Games</button>
+        </form>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Opponent</th>
+                        <th>Date</th>
+                        <th>Result</th>
+                        <th>My Rating</th>
+                        <th>Time Control</th>
+                        <th>Opening</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for game in games %}
+                    <tr>
+                        <td>{{ game['black_username'] if game['white_username'] == 'brengall99' else game['white_username'] }}</td>
+                        <td>{{ game['start_date'] }}</td>
+                        <td>{{ game['termination'] }}</td>
+                        <td>{{ game['brengall99_rating'] }}</td>
+                        <td>{{ game['time_control'] }}</td>
+                        <td>{{ game['opening_name'] }}</td>
+                        <td><a href="{{ game['url'] }}" target="_blank">View Game</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="footer">
+        This page will serve 50 results at a maximum!
+    </footer>
+{% endblock %} 

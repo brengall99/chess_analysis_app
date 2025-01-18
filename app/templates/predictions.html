@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}Predictive Insights{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <h1>Predictive Insights</h1>
+        <p>Use a predictive model to see if I'll win!</p>
+
+        <form method="POST" action="/predictions" class="filter-form">
+            <div class="form-group">
+                <label for="player_rating">My Rating:</label>
+                <div class="tooltip">
+                    <input type="number" id="player_rating" name="player_rating" required>
+                    <span class="tooltiptext">Enter the rating for brengall99</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="opponent_rating">Opponent Rating:</label>
+                <div class="tooltip">
+                    <input type="number" id="opponent_rating" name="opponent_rating" required>
+                    <span class="tooltiptext">Enter the rating for my opponent</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="color">My Color:</label>
+                <div class="tooltip">
+                    <input type="text" id="color" name="color" required>
+                    <span class="tooltiptext">Enter my color, white or black</span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn">Predict</button>
+        </form>
+
+        {% if win_probability is defined %}
+        
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>My Rating</th>
+                            <th>Opponent Rating</th>
+                            <th>My Color</th>
+                            <th>Win Probability</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>{{ player_rating }}</td>
+                            <td>{{ opponent_rating }}</td>
+                            <td>
+                                {% if color == 1 %}
+                                        White
+                                    {% else %}
+                                        Black
+                                    {% endif %}
+                            </td>
+                            <td>{{ win_probability }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        {% endif %}
+    </div>
+
+    <footer class="footer">
+        This model is questionable at best!!!
+    </footer>
+
+{% endblock %}

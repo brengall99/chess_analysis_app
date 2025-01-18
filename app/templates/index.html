@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Game Lookup{% endblock %}
+
+{% block content %}
+
+<div id="loading-spinner" class="spinner"></div>
+
+<div class="container">
+    <h1>Welcome to Chess Game Analysis!</h1>
+    <p>Select an option below!</p>
+    <div class="box-container">
+
+         <div class="item-container" onclick="window.location.href='/lookup'">
+            <div class="description">
+                <h3>Game Lookup</h3>
+                <p>Search and filter through my game history by date, rating, result, and opening!</p>
+            </div>
+        </div>
+
+        <div class="item-container" onclick="window.location.href='/analysis'">
+            <div class="description">
+                <h3>Game Analysis</h3>
+                <p>Analysis of my elo over time, top openings, wins, losses and draws and more!</p>
+            </div>
+        </div>
+
+        <div class="item-container" onclick="window.location.href='/predictions'">
+            <div class="description">
+                <h3>Predictive Insights</h3>
+                <p>Employ a novel machine learning model to predict the likelyhood of me winning!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
