@@ -1,9 +1,3 @@
-processed data: -> turn this into a table and explain all of them
-['url', 'time_control', 'rated', 'white_username', 'white_rating',
-       'black_username', 'black_rating', 'result', 'result_games',
-       'start_date', 'end_date', 'start_time', 'end_time', 'fen', 'eco',
-       'eco_url', 'event', 'termination']
-
 # Chess Analysis App
 
 A web app that uses my data from chess.com to display analysis of my past games, allow users to search and filter through a database of all of those games, and employe a novel machine learning model to predict the likelyhood of me winning the game.
