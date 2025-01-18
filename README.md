@@ -44,16 +44,16 @@ Alternatively, disregard the above line and just use final.csv as is!
 I want to make the app useable for any username, and take this as input on the homepage. This will mean completely refactoring how data is collected and cleaned.
 
 ## App 
-# Home
+### Home
 ![Bildschirmfoto 2025-01-18 um 14 39 56](https://github.com/user-attachments/assets/fc43071d-8640-41ca-aa00-d638df703065)
 
-# Game Lookup
+### Game Lookup
 ![Bildschirmfoto 2025-01-18 um 14 40 07](https://github.com/user-attachments/assets/42cb26bf-09d5-4f3d-b3c4-fe708be34907)
 
-# Game Analysis
+### Game Analysis
 ![Bildschirmfoto 2025-01-18 um 14 40 17](https://github.com/user-attachments/assets/a1d5f47a-72bf-489a-90f5-1738b2cf728f)
 
-# Predictive Insights
+### Predictive Insights
 ![Bildschirmfoto 2025-01-18 um 14 41 09](https://github.com/user-attachments/assets/127c6e33-c7a4-4670-ae97-d7ade88fc9d3)
 
 
