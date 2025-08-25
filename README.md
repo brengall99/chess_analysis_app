@@ -17,14 +17,15 @@ A web app that uses my data from chess.com to display analysis of my past games,
 
 ## Usage
 
-Clone the project and navigate to it in terminal, install dependencies using: 
+Clone the project and navigate to it in terminal. Install dependencies using: 
 ```
 pip install -r requirements.txt
 ```
-then, run the applicaiton usin:
+then, run the applicaiton using:
 ```
 python main.py
 ```
+This will let you open the web app on local host.
 
 - **Home**: The homepage of the app where users are introduced to the app’s feature.
 - **Game Lookup**: Filter by any or all of the following: game start date, end date, my minimum rating, my maximum rating, result of the game and opening name. A table of results is provided.
