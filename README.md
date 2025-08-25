@@ -36,12 +36,8 @@ This returns a json object with a list of further urls with games divided up by 
 https://api.chess.com/pub/player/{username}/games/2022/10
 ```
 
-Use injest_monthly_archive_urls.py then fetch_game_data.py, then convert_to_csv.py then eda and cleaning jupyter notebooks to get the final_csv.
-
-Alternatively, disregard the above line and just use final.csv as is!
-
 ## Future Improvements
-I want to make the app useable for any username, and take this as input on the homepage. This will mean completely refactoring how data is collected and cleaned.
+This project uses a number of python scripts to extract, format, and clean the data to obtain final.csv. Ideally, this will be done with one script, and will take user input for the username. This will mean completely refactoring how data is collected and cleaned.
 
 ## App 
 ### Home
